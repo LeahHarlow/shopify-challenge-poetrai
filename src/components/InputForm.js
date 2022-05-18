@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addPoem, clearPoems } from '../store/poems';
 
 const InputForm = () => {
-  const [poetryPrompt, setPoetryPrompt] = useState('');
+  const [poetryPrompt, setPoetryPrompt] = useState('Write a poem about...');
   const [response, setResponse] = useState({});
   const [currentPoem, setCurrentPoem] = useState('');
   const [submittedStatus, setSubmittedStatus] = useState(false);

@@ -18,17 +18,18 @@ const PreviousPoems = () => {
           {Object.keys(promptAndPoem).map((poemKey) => (
             <div className='promptAndPoem' key={poemKey}>
               <h3>Prompt:</h3>
+              {console.log('WHAT THE HECK DOES THIS DATA LOOK LIKE?',promptAndPoem)}
               <div className='prompt'> {promptAndPoem[poemKey].prompt} {poemKey}</div>
               <h3>Poem:</h3>
               <div className='poem'>{promptAndPoem[poemKey].poem}</div>
-              <button onClick={() => dispatch(clearSinglePoem(poemKey))}>
+              <button onClick={() => dispatch(clearSinglePoem(prompt))}>
                 Clear Poem
               </button>
             </div>
           ))}
         </div>
       ) : (
-        <p>Generate your first poem!</p>
+        <h2>Generate your first poem!</h2>
       )}
     </>
   );
