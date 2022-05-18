@@ -51,7 +51,7 @@ export default (state = initialState, action) => {
     case CLEAR_POEMS:
       return (state = []);
       case CLEAR_SINGLE_POEM:
-        return state.filter((poemKey) => poemKey !== action.poemKey);
+        return state.filter((poem) => poem.poemKey !== action.poem.poemKey);
     default:
       return state;
   }
