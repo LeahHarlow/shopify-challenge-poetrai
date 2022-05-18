@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #0f1728;
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(250, 238, 219);
+}
+
+body {
+  font-family: 'IM Fell English SC';
+  background-color: rgb(250, 238, 219);
+}
+
+#poetry-prompt-container,
+#response-container {
+  margin: 2%;
+}
+
+#poetry-prompt {
+  width: 60vw;
+  height: 15vh;
+  border: #0f1728 solid 0.3vh;
+  font-family: fantasy;
+  font-weight: bold;
+}
+
+#title {
+  margin-bottom: 0%;
+  font-stretch: expanded;
+}
+
+#sub-title {
+  margin-top: 0%;
+  font-stretch: extra-expanded;
+  color: rgb(170, 171, 185);
+}
+
+button {
+  font-family: fantasy;
+  font-weight: bold;
+  color: rgb(170, 171, 185);
+  background-color: #0f1728;
+  border-radius: 10px;
+  padding: 1%;
+}
+
+/* add hover for button */
+
+.promptAndPoem {
+  align-self: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+  border: #0f1728 solid 2px;
+  border-radius: 15px;
+  width: 80vw;
+  padding: 1%;
+  background-color: rgba(170, 171, 185, 0.137);
+}
+
+h3{
+  margin: 0%;
+}
