@@ -17,13 +17,13 @@ const InputForm = () => {
   //Once I have the generated poem on local state I want to send one object with the prompt and the poem together to the store to be read by the PreviousPoems component to save redundant redux. I only want that call to happen though once Ive hit submit, theres a fun little bug that will call dispatch everytime you back space if you dont include some kind of submitted status the way I wrote this
   useEffect(() => {
     if (!!submittedStatus && currentPoem.length) {
-      dispatch(addPoem({prompt: poetryPrompt, poem: currentPoem}));
+      dispatch(addPoem({ prompt: poetryPrompt, poem: currentPoem }));
       setSubmittedStatus(false);
       setCurrentPoem('');
     }
   }, [dispatch, currentPoem, poetryPrompt, submittedStatus]);
 
-  //grabbing the poem off of the json response and addign it to local state
+  //grabbing the poem off of the json response and adding it to local state
   useEffect(() => {
     if (Object.keys(response).length) {
       setCurrentPoem(response.choices[0].text);
@@ -64,8 +64,8 @@ const InputForm = () => {
 
   //function to reset the redux store of poems to an empty array
   const clearAllPoems = () => {
-    dispatch(clearPoems())
-  }
+    dispatch(clearPoems());
+  };
 
   //control input and set the poetry prompt to local state
   const handleInputChange = (event) => {
@@ -84,8 +84,11 @@ const InputForm = () => {
         />
       </form>
       <button onClick={() => writePoem(prompt)}>Generate Poem</button>
-      {previousPoems.length ? (<button onClick={() => clearAllPoems()}>Clear All Poems</button>): ''}
-
+      {previousPoems.length ? (
+        <button onClick={() => clearAllPoems()}>Clear All Poems</button>
+      ) : (
+        ''
+      )}
     </>
   );
 };
