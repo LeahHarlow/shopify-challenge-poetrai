@@ -2,10 +2,10 @@ const ADD_POEM = 'ADD_POEM';
 const CLEAR_POEMS = 'CLEAR_POEMS';
 const CLEAR_SINGLE_POEM = 'CLEAR_SINGLE_POEM';
 
-export const _addPoem = (promptAndPoem) => {
+export const _addPoem = (promptsAndPoems) => {
   return {
     type: ADD_POEM,
-    promptAndPoem,
+    promptsAndPoems,
   };
 };
 
@@ -23,9 +23,9 @@ export const _clearSinglePoem = (prompt) => {
   };
 };
 
-export const addPoem = (promptAndPoem) => {
+export const addPoem = (promptsAndPoems) => {
   return (dispatch) => {
-    dispatch(_addPoem(promptAndPoem));
+    dispatch(_addPoem(promptsAndPoems));
   };
 };
 
@@ -47,11 +47,11 @@ const initialState = [];
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_POEM:
-      return [action.promptAndPoem, ...state];
+      return [action.promptsAndPoems, ...state];
     case CLEAR_POEMS:
       return (state = []);
     case CLEAR_SINGLE_POEM:
-      return state.filter((promptAndPoem) => promptAndPoem.prompt !== action.prompt);
+      return state.filter((promptsAndPoems) => promptsAndPoems.prompt !== action.prompt);
     default:
       return state;
   }

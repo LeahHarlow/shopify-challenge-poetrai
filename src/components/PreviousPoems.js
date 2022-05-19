@@ -4,8 +4,8 @@ import { clearSinglePoem } from '../store/poems';
 
 const PreviousPoems = () => {
   //read previously made poems from the redux store
-  const promptAndPoem = useSelector((state) => {
-    return state.promptAndPoem || '';
+  const promptsAndPoems = useSelector((state) => {
+    return state.promptsAndPoems || '';
   });
 
   const dispatch = useDispatch();
@@ -13,17 +13,17 @@ const PreviousPoems = () => {
   //If there are no poems created yet prompt the user to generate their first poem, otherwise show the previous poems.
   return (
     <>
-      {promptAndPoem.length ? (
+      {promptsAndPoems.length ? (
         <div id='response-containter'>
-          {Object.keys(promptAndPoem).map((poemKey) => (
-            <div className='promptAndPoem' key={poemKey}>
+          {Object.keys(promptsAndPoems).map((poemKey) => (
+            <div className='promptsAndPoems' key={poemKey}>
               <h3>Prompt:</h3>
-              <div className='prompt'> {promptAndPoem[poemKey].prompt}</div>
+              <div className='prompt'> {promptsAndPoems[poemKey].prompt}</div>
               <h3>Poem:</h3>
-              <div className='poem'>{promptAndPoem[poemKey].poem}</div>
+              <div className='poem'>{promptsAndPoems[poemKey].poem}</div>
               <button
                 onClick={() =>
-                  dispatch(clearSinglePoem(promptAndPoem[poemKey].prompt))
+                  dispatch(clearSinglePoem(promptsAndPoems[poemKey].prompt))
                 }
               >
                 Clear Poem

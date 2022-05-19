@@ -11,7 +11,7 @@ const InputForm = () => {
   const dispatch = useDispatch();
 
   const previousPoems = useSelector((state) => {
-    return state.promptAndPoem || '';
+    return state.promptsAndPoems || '';
   });
 
   //Once I have the generated poem on local state I want to send one object with the prompt and the poem together to the store to be read by the PreviousPoems component to save redundant redux. I only want that call to happen though once Ive hit submit, theres a fun little bug that will call dispatch everytime you back space if you dont include some kind of submitted status the way I wrote this
