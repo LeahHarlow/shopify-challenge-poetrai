@@ -51,6 +51,7 @@ const InputForm = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        mode: 'cors',
         authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
       },
       body: JSON.stringify(data),
