@@ -15,7 +15,7 @@ Will allow you to view my web app Poetrai deployed on Heroku.
 
 This is what Poetrai looks like when the user first opens it and enters a prompt into the input field that is pre-filled with "Write a poem about..." to get them started and yield better api results.
 
-<img src="./public/clearPoemsButtonAppears.png" width="350"/>
+<img src="./public/clearPoemsAppears.png" width="350"/>
 
 This is the button that appears to clear all of the poems once at least one poem is created. You might also notice that the user has the ability to remove just the single poem as well.
 
