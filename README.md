@@ -23,7 +23,6 @@ This is the button that appears to clear all of the poems once at least one poem
 
 This view shows that the poems will be visible from newest to oldest.
 
-<img src="./public/filters.png" width="350"/>
 
 ## Future State
 
