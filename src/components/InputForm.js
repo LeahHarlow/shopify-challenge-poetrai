@@ -46,7 +46,6 @@ const InputForm = () => {
 
   //Funtion to make the API call and set the returned JSON object on local state
   const writePoem = (data) => {
-    console.log('writing Poem');
     fetch('https://api.openai.com/v1/engines/text-curie-001/completions', {
       method: 'POST',
       mode: 'cors',
