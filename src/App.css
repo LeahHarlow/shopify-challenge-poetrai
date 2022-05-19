@@ -32,20 +32,23 @@ body {
   border: #0f1728 solid 0.3vh;
   font-family: fantasy;
   font-weight: bold;
-  box-shadow: 0px 2px 5px rgb(170, 171, 185);
+  box-shadow: 0px 0.2em 0.5em rgb(170, 171, 185);
 }
 
 #title {
   margin-bottom: 0%;
   font-stretch: expanded;
-  text-shadow: 0px 2px 2px black;
+  letter-spacing: 0.2em;
+  text-shadow: 0em 2em 2em black;
+  font-size: 300%;
 }
 
 #sub-title {
   margin-top: 0%;
   font-stretch: extra-expanded;
+  letter-spacing: 0.1em;
   color: rgb(170, 171, 185);
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 0.1em 0.1em 0.1em black;
 }
 
 button {
@@ -53,7 +56,7 @@ button {
   font-weight: bold;
   color: rgb(170, 171, 185);
   background-color: #0f1728;
-  border-radius: 10px;
+  border-radius: 10em;
   padding: 1%;
   margin: 1%;
 }
