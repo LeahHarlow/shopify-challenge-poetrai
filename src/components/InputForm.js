@@ -49,9 +49,9 @@ const InputForm = () => {
     console.log('writing Poem');
     fetch('https://api.openai.com/v1/engines/text-curie-001/completions', {
       method: 'POST',
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
-        mode: 'cors',
         authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
       },
       body: JSON.stringify(data),
