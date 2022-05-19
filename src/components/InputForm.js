@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { addPoem, clearPoems } from '../store/poems';
 
 const InputForm = () => {
@@ -10,12 +10,16 @@ const InputForm = () => {
 
   const dispatch = useDispatch();
 
-  //Once I have the generated poem on local state I want to send one object with the prompt and the poem together to the store to be read by the PreviousPoems component to save redundant redux
+  const previousPoems = useSelector((state) => {
+    return state.promptAndPoem || '';
+  });
 
+  //Once I have the generated poem on local state I want to send one object with the prompt and the poem together to the store to be read by the PreviousPoems component to save redundant redux. I only want that call to happen though once Ive hit submit, theres a fun little bug that will call dispatch everytime you back space if you dont include some kind of submitted status the way I wrote this
   useEffect(() => {
     if (!!submittedStatus && currentPoem.length) {
       dispatch(addPoem({prompt: poetryPrompt, poem: currentPoem}));
       setSubmittedStatus(false);
+      setCurrentPoem('');
     }
   }, [dispatch, currentPoem, poetryPrompt, submittedStatus]);
 
@@ -24,7 +28,7 @@ const InputForm = () => {
     if (Object.keys(response).length) {
       setCurrentPoem(response.choices[0].text);
     }
-  }, [response, currentPoem, poetryPrompt]);
+  }, [response]);
 
   //The request still worked when I made it with only the poetryPrompt but the results were better when I included this other information from the challenge doc so I set it up like this to keep the user from seeing it
   const prompt = {
@@ -58,6 +62,7 @@ const InputForm = () => {
     setSubmittedStatus(true);
   };
 
+  //function to reset the redux store of poems to an empty array
   const clearAllPoems = () => {
     dispatch(clearPoems())
   }
@@ -79,7 +84,8 @@ const InputForm = () => {
         />
       </form>
       <button onClick={() => writePoem(prompt)}>Generate Poem</button>
-      <button onClick={() => clearAllPoems()}>Clear All Poems</button>
+      {previousPoems.length ? (<button onClick={() => clearAllPoems()}>Clear All Poems</button>): ''}
+
     </>
   );
 };

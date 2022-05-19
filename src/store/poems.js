@@ -16,10 +16,10 @@ export const _clearPoems = (poems) => {
   };
 };
 
-export const _clearSinglePoem = (poem) => {
+export const _clearSinglePoem = (prompt) => {
   return {
-    type: CLEAR_POEMS,
-    poem,
+    type: CLEAR_SINGLE_POEM,
+    prompt,
   };
 };
 
@@ -35,9 +35,9 @@ export const clearPoems = (poems) => {
   };
 };
 
-export const clearSinglePoem = (poem) => {
+export const clearSinglePoem = (prompt) => {
   return (dispatch) => {
-    dispatch(_clearSinglePoem(poem));
+    dispatch(_clearSinglePoem(prompt));
   };
 };
 
@@ -50,8 +50,8 @@ export default (state = initialState, action) => {
       return [action.promptAndPoem, ...state];
     case CLEAR_POEMS:
       return (state = []);
-      case CLEAR_SINGLE_POEM:
-        return state.filter((poemObject) => poemObject.poem !== action.poem);
+    case CLEAR_SINGLE_POEM:
+      return state.filter((promptAndPoem) => promptAndPoem.prompt !== action.prompt);
     default:
       return state;
   }
