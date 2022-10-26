@@ -26,7 +26,7 @@ This view shows that the poems will be visible from newest to oldest.
 
 ## Future State
 
-If I had more time for this project before submission, I would create a user log in to keep poems private that I would encrpt with JWT bcrypt and salt rounds. I would also create a cloud database for more storage permanence that simply making a redux store and I would create a limit to the ammount of poems a user can create to keep my storage from being overwhelmed.
+If I had more time for this project before submission, I would create a user log in to keep poems private that I would encrypt with JWT bcrypt and salt rounds. I would also create a cloud database for more storage permanence than simply making a redux store and I would create a limit to the ammount of poems a user can create to keep my storage from being overwhelmed.
 
 Thank you for your time and I hope you have enjoyed this project!
 
