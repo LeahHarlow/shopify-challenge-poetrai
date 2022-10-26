@@ -1,6 +1,6 @@
 # Leah Hamilton's Shopify Intership Challenge - Poetrai
 
-Hello! My name is Leah and working for Shopify would a huge step and a dream come true. I hope you enjoy this mini web app for AI poetry as my applicaation to your internship program.
+Hello! My name is Leah and working for Shopify would a huge step and a dream come true. I hope you enjoy this mini web app for AI poetry as my application to your internship program.
 
 ### `npm start`
 
